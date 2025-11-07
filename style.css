@@ -9,7 +9,6 @@
     --bg-dark: #f0f4f8; /* Cinza claro suave */
     --border-color: #e0e0e0;
     --font-sans: 'Arial', sans-serif;
-    --font-serif: 'Georgia', serif;
 }
 
 /* Reset Básico */
@@ -53,8 +52,9 @@ body {
     align-items: center;
 }
 
+/* Tamanho do Logo no Desktop */
 .logo-link .logo-img {
-    height: 50px; /* Ajuste o tamanho do seu logo */
+    height: 60px; 
     width: auto;
 }
 
@@ -71,13 +71,13 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
+    transition: color 0.3s ease;
     padding-bottom: 5px;
 }
 
 .nav-menu .nav-list .nav-link:hover {
     color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color); 
 }
 
 .nav-menu .btn-cta {
@@ -90,13 +90,13 @@ body {
 }
 
 .nav-menu .btn-cta:hover {
-    background-color: #388e3c; /* Um verde um pouco mais escuro */
+    background-color: #388e3c; 
     transform: translateY(-2px);
-    border-bottom: none; /* Remove a borda no hover para o botão */
+    border-bottom: none; 
 }
 
 .menu-toggle {
-    display: none; /* Escondido por padrão em desktop */
+    display: none; 
     background: none;
     border: none;
     font-size: 28px;
@@ -110,7 +110,7 @@ section {
     text-align: center;
 }
 
-section:nth-child(even) { /* Para seções alternadas */
+section:nth-child(even) { 
     background-color: var(--bg-dark);
 }
 
@@ -181,13 +181,13 @@ p {
     background-color: var(--bg-light);
     padding: 100px 0;
     text-align: left;
-    overflow: hidden; /* Para garantir que a imagem não vaze */
+    overflow: hidden; 
 }
 
 .hero-content {
     display: flex;
     align-items: center;
-    gap: 40px; /* Espaçamento entre texto e imagem */
+    gap: 40px; 
 }
 
 .hero-text {
@@ -211,7 +211,16 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 500px;
+    overflow: hidden;
 }
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
 
 /* --- Services Section --- */
 .services-section {
@@ -241,8 +250,8 @@ p {
 
 .service-card .card-img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens dos cards */
-    object-fit: cover; /* Garante que a imagem cubra o espaço */
+    height: 200px; 
+    object-fit: cover; 
     display: block;
 }
 
@@ -254,7 +263,7 @@ p {
     font-size: 3em;
     color: var(--secondary-color);
     margin-bottom: 15px;
-    display: block; /* Para centralizar se necessário ou manter alinhamento */
+    display: block; 
 }
 
 .service-card h3 {
@@ -503,156 +512,104 @@ p {
     transform: scale(1.1);
 }
 
-/* --- Responsividade (Mobile First) --- */
+/* -------------------------------------- */
+/* --- Ajustes Mobile (max-width: 992px) --- */
+/* -------------------------------------- */
 @media (max-width: 992px) {
-    h1 {
-        font-size: 2.8em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
+    /* ... (Estilos de tablet/mobile que não mudam a animação) ... */
+    
     .hero-content {
-        flex-direction: column-reverse; /* Imagem acima do texto no mobile */
+        flex-direction: column-reverse; 
         text-align: center;
     }
     
     .hero-text, .hero-image {
-        flex: none; /* Remove flex-grow */
+        flex: none; 
         width: 100%;
     }
 
     .hero-image {
         margin-bottom: 30px;
+        max-height: 350px; 
+        overflow: hidden;
     }
-
-    .hero-text h1, .about-text h2 {
-        text-align: center;
+    .hero-image img {
+        object-fit: contain; 
+        max-height: 350px; 
     }
-
+    
     .about-content {
         flex-direction: column;
     }
-
-    .about-image {
-        margin-bottom: 30px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-col img, .footer-col h4, .footer-col p, .footer-col ul, .footer-col .social-icons {
-        margin: 0 auto 15px auto;
-    }
-    .footer-col ul {
-        padding-left: 0; /* Remove padding padrão de lista */
-    }
-    .social-icons {
-        justify-content: center; /* Centraliza ícones sociais */
-        display: flex;
-    }
 }
 
+/* -------------------------------------- */
+/* --- Ajustes Mobile (max-width: 768px) - Menu Gaveta (SLIDE-IN) --- */
+/* -------------------------------------- */
 @media (max-width: 768px) {
-    .main-header {
-        padding: 10px 0;
+    /* Logo */
+    .logo-link .logo-img {
+        height: 45px; 
     }
 
     .header-content {
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 0 15px; 
+        position: relative; /* Importante para o z-index do menu gaveta */
     }
 
-    .logo-link {
-        margin-bottom: 10px;
-    }
-
-    .nav-menu {
-        width: 100%;
-        text-align: center;
-    }
-
+    /* 1. Esconde o menu fora da tela à esquerda */
     .nav-list {
-        display: none; /* Escondido por padrão no mobile */
+        display: flex; /* Mantém o flexbox para colunas */
         flex-direction: column;
-        width: 100%;
+        
+        position: fixed; /* Fixa o menu na tela (gaveta) */
+        top: 0; /* Começa no topo */
+        left: 0; /* Posição inicial fora da tela (esquerda) */
+        
+        height: 100vh; /* Altura total da tela */
+        width: 70%; /* Largura da gaveta (70% da tela) */
+        max-width: 300px; /* Limite máximo para tablets */
+        
         background-color: var(--primary-color);
-        position: absolute;
-        top: 70px; /* Abaixo do header */
-        left: 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        animation: slideDown 0.3s ease-out forwards;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+        
+        transform: translateX(-100%); /* Move 100% para fora da tela */
+        transition: transform 0.4s ease-in-out; /* Adiciona transição suave */
+        
+        z-index: 990; /* Abaixo do header, mas acima do conteúdo */
+        overflow-y: auto; /* Permite scroll em telas pequenas */
     }
 
+    /* 2. Mostra o menu quando ativo */
     .nav-list.active {
-        display: flex;
+        transform: translateX(0); /* Desliza para dentro da tela (posição 0) */
     }
 
+    /* 3. Estilos dos itens (ajustados para serem mais compactos) */
     .nav-list li {
         margin: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-list li:last-child {
-        border-bottom: none;
+        text-align: left; /* Alinha o texto à esquerda dentro da gaveta */
+        padding-left: 15px;
     }
 
     .nav-list .nav-link {
         display: block;
-        padding: 15px 20px;
-        text-align: center;
+        padding: 15px 10px; /* Padding de item da gaveta */
         width: 100%;
+        font-size: 1.1em;
     }
-
+    
     .nav-menu .btn-cta {
-        margin-top: 10px; /* Espaçamento para o botão no menu mobile */
-        width: calc(100% - 40px); /* Ajuste a largura do botão no menu */
-        margin-bottom: 15px;
+        margin: 15px 20px; /* Margem interna da gaveta */
+        width: calc(100% - 40px);
+        padding: 12px;
+        font-size: 1.0em;
     }
     
     .menu-toggle {
-        display: block; /* Visível no mobile */
-        position: absolute;
-        right: 20px;
-        top: 20px;
+        display: block; 
     }
-
-    section {
-        padding: 60px 0;
-    }
-
-    h1 {
-        font-size: 2.2em;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-
-    p {
-        font-size: 1em;
-    }
-
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 25px;
-    }
-}
-
-/* Animação para menu mobile */
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    
+    /* (Outros estilos de mobile...) */
 }
