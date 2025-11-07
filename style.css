@@ -1,32 +1,33 @@
-/* Importação de Fonte Moderna do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-/* Variáveis CSS para facilitar a manutenção */
+/* Variáveis CSS para fácil customização */
 :root {
-    /* Cores ajustadas para harmonizar com o logotipo */
-    --primary-color: #1A3765;       /* Azul Escuro Principal (Base do logo) */
-    --secondary-color: #28A745;     /* Verde de Destaque (Mantido para CTA, contraste funcional) */
-    --accent-color: #00A3FF;        /* Azul Celeste/Ciano vibrante (Detalhamento do logo e ícones) */
-    --text-dark: #2c3e50;           /* Texto escuro forte */
-    --text-light: #f4f4f4;          /* Texto claro - será usado no header escuro */
-    --bg-light: #ffffff;           /* Fundo principal claro */
-    --bg-section: #f8f9fa;          /* Fundo de seção de contraste leve */
-    --bg-dark: #1f2833;             /* Rodapé escuro */
+    --primary-color: #0d47a1; /* Azul Marinho Escuro */
+    --secondary-color: #1976d2; /* Azul Médio */
+    --accent-color: #4CAF50; /* Verde para destaque/CTA */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #ffffff;
+    --bg-dark: #f0f4f8; /* Cinza claro suave */
+    --border-color: #e0e0e0;
+    --font-sans: 'Arial', sans-serif;
+    --font-serif: 'Georgia', serif;
 }
 
-/* --- Reset e Configurações Globais --- */
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
-    overflow-x: hidden; /* Evita barras de rolagem horizontais */
 }
 
 .container {
@@ -35,347 +36,335 @@ body {
     padding: 0 20px;
 }
 
-/* --- Títulos e Seções --- */
+/* --- Header --- */
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link .logo-img {
+    height: 50px; /* Ajuste o tamanho do seu logo */
+    width: auto;
+}
+
+.nav-menu .nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu .nav-list li {
+    margin-left: 30px;
+}
+
+.nav-menu .nav-list .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.nav-menu .nav-list .nav-link:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.nav-menu .btn-cta {
+    background-color: var(--accent-color);
+    color: var(--bg-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-menu .btn-cta:hover {
+    background-color: #388e3c; /* Um verde um pouco mais escuro */
+    transform: translateY(-2px);
+    border-bottom: none; /* Remove a borda no hover para o botão */
+}
+
+.menu-toggle {
+    display: none; /* Escondido por padrão em desktop */
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+/* --- Seções Gerais --- */
 section {
     padding: 80px 0;
     text-align: center;
 }
 
-section h3 {
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    color: var(--text-dark);
-    position: relative;
-    padding-bottom: 10px;
+section:nth-child(even) { /* Para seções alternadas */
+    background-color: var(--bg-dark);
 }
 
-section h3::after {
-    content: '';
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary-color); /* Usando o novo primary-color */
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* --- Botões Gerais --- */
+h1 {
+    font-size: 3.2em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* Botões */
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 50px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 2px solid transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
 }
 
 .btn-primary {
-    background-color: var(--primary-color); /* Usando o novo primary-color */
-    color: var(--text-light);
+    background-color: var(--accent-color);
+    color: var(--bg-light);
 }
 
 .btn-primary:hover {
-    background-color: #122a4b; /* Tom mais escuro do primary-color no hover */
+    background-color: #388e3c;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(26, 55, 101, 0.3); /* Sombra com a cor base */
 }
 
 .btn-secondary {
-    background-color: var(--text-dark);
-    color: var(--text-light);
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: #555;
+    background-color: var(--primary-color);
+    color: var(--bg-light);
     transform: translateY(-2px);
 }
 
-/* --- 1. Cabeçalho e Navegação --- */
-header {
-    background: var(--primary-color); /* ALTERADO: Cor de fundo do header para o azul escuro do logo */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte para destaque */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-/* NOVO CSS PARA O LOGOTIPO DE IMAGEM */
-.logo-link {
-    display: block;
-    line-height: 0;
-}
-
-.logo-img {
-    height: auto;
-    width: 220px; /* ALTERADO: Largura do logo em desktop aumentada AINDA MAIS */
+.responsive-img {
     max-width: 100%;
-    vertical-align: middle;
-}
-/* FIM DO NOVO CSS PARA O LOGOTIPO DE IMAGEM */
-
-
-.nav-list {
-    list-style: none;
-    display: flex;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.nav-list li {
-    margin-left: 30px;
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: var(--text-light); /* ALTERADO: Cor do texto da navegação para claro */
-    font-weight: 500;
-    padding: 5px 0;
-    position: relative;
-    transition: color 0.3s;
-}
-
-.nav-list a:hover {
-    color: var(--accent-color); /* ALTERADO: Cor do hover para o azul ciano do logo */
-}
-
-/* Efeito de sublinhado moderno */
-.nav-list a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: var(--accent-color); /* ALTERADO: Cor do sublinhado para o azul ciano do logo */
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-}
-
-.nav-list a:hover::after, .nav-list a.btn-contato:hover::after {
-    width: 100%;
-}
-
-.btn-contato {
-    background-color: var(--secondary-color) !important; /* Mantido verde para CTA */
-    color: var(--text-light) !important;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-
-.btn-contato:hover {
-    background-color: #218838 !important; /* Tom mais escuro do verde no hover */
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-light); /* ALTERADO: Cor do ícone do menu mobile para claro */
-}
-
-/* --- 2. Seção Principal (Hero) --- */
-.hero {
-    /* Mude 'hero-bg.jpg' pela sua imagem na pasta 'assets/images' */
-    background: url('./assets/images/hero-bg.jpg') no-repeat center center/cover;
-    color: var(--text-light);
-    text-align: center;
-    padding: 140px 20px;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Camada escura com o tom primary-color para harmonizar */
-    background: rgba(26, 55, 101, 0.75);
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--bg-light);
+    padding: 100px 0;
+    text-align: left;
+    overflow: hidden; /* Para garantir que a imagem não vaze */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Espaçamento entre texto e imagem */
 }
 
-.hero h2 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: white; /* Garante que o título seja branco */
+.hero-text {
+    flex: 1;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-weight: 300;
+.hero-text h1 {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 25px;
 }
 
-/* --- 3. Seção de Serviços --- */
-.servicos {
-    background-color: var(--bg-section); /* Mantido tom claro para contraste com o header */
+.hero-text p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
 }
 
-.servicos-grid {
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Services Section --- */
+.services-section {
+    padding-top: 60px;
+}
+
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.servico-card {
-    background: var(--bg-light);
+.service-card {
+    background-color: var(--bg-light);
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    overflow: hidden; /* Para a imagem ficar certinha */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.servico-card:hover {
+.service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
-.servico-img {
+.service-card .card-img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.servico-card:hover .servico-img {
-    transform: scale(1.05);
-}
-
-.icon-card {
+    height: 200px; /* Altura fixa para as imagens dos cards */
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
     display: block;
-    font-size: 2rem;
-    color: var(--primary-color); /* Usando o novo primary-color */
-    margin: 20px 0 10px 25px; /* Ícone no topo do texto */
 }
 
-.servico-card h4 {
-    font-size: 1.4rem;
-    margin: 0 25px 5px;
-    font-weight: 600;
+.service-card .card-content {
+    padding: 25px;
 }
 
-.servico-card p {
-    padding: 0 25px 25px;
-    font-size: 0.95rem;
-    color: #666;
-}
-
-/* --- 4. Seção Diferenciais/Vantagens --- */
-.diferenciais {
-    background-color: var(--bg-light); /* Mantido tom claro para contraste com o header */
-    padding: 60px 0;
-}
-
-.diferenciais-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
-    text-align: center;
-}
-
-.diferencial-item {
-    padding: 30px 20px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    transition: all 0.3s;
-}
-
-.diferencial-item:hover {
-    background-color: #eaf6ff;
-    border-color: var(--primary-color); /* Borda no hover com primary-color */
-}
-
-.diferencial-item i {
-    font-size: 2.5rem;
-    color: var(--accent-color); /* Usando o novo accent-color */
+.service-card .icon-service {
+    font-size: 3em;
+    color: var(--secondary-color);
     margin-bottom: 15px;
+    display: block; /* Para centralizar se necessário ou manter alinhamento */
 }
 
-.diferencial-item h4 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text-dark);
+.service-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-/* --- 5. Seção Sobre Nós --- */
-.sobre {
-    background-color: var(--bg-section); /* Mantido tom claro */
+.service-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* --- Features Section --- */
+.features-section {
+    background-color: var(--bg-dark);
+    padding-top: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h4 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #777;
+    margin-bottom: 0;
+}
+
+/* --- About Section --- */
+.about-section {
     text-align: left;
 }
 
-.sobre h3 {
-    text-align: center;
-}
-
-.sobre-content {
+.about-content {
     display: flex;
-    gap: 40px;
     align-items: center;
-    margin-top: 50px;
+    gap: 50px;
 }
 
-.sobre-img {
+.about-image {
     flex: 1;
-    max-width: 50%;
+    min-width: 300px;
+}
+
+.about-image img {
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.sobre-text {
-    flex: 1;
-    max-width: 50%;
+.about-text {
+    flex: 2;
 }
 
-.sobre-text p {
-    margin-bottom: 20px;
-    color: #555;
-    font-size: 1rem;
+.about-text h2 {
+    text-align: left;
+    margin-bottom: 25px;
 }
 
-/* --- 6. Seção de Contato (Formulário) --- */
-.contato {
-    background-color: var(--bg-light); /* Mantido tom claro */
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 80px 0;
 }
 
-.contato-subtext {
-    max-width: 600px;
-    margin: -30px auto 40px;
-    font-size: 1.1rem;
-    color: #777;
+.contact-section h2, .contact-subtext {
+    color: var(--text-light);
+}
+
+.contact-subtext {
+    font-size: 1.1em;
+    margin-bottom: 40px;
 }
 
 .contact-form {
+    background-color: var(--bg-light);
+    padding: 40px;
+    border-radius: 10px;
     max-width: 600px;
     margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     text-align: left;
-    padding: 30px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
@@ -384,190 +373,218 @@ header .container {
 
 .form-group label {
     display: block;
-    font-weight: 600;
     margin-bottom: 8px;
-    color: var(--primary-color); /* Usando o novo primary-color */
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form select,
-.contact-form textarea {
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+    color: var(--text-dark);
+    background-color: #fcfcfc;
+    transition: border-color 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-color); /* Usando o novo accent-color */
-    box-shadow: 0 0 8px rgba(0, 163, 255, 0.2);
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary-color);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(var(--secondary-color), 0.2);
 }
 
-.contact-form textarea {
-    resize: vertical;
-}
-
-.form-note {
-    font-size: 0.85rem;
-    color: #999;
-    margin-top: 15px;
-    text-align: center;
-}
-
-/* O botão de submit do formulário usa .btn-primary */
 .contact-form .btn-primary {
     width: 100%;
     border: none;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.1em;
+    padding: 15px;
+    margin-top: 25px;
 }
 
-/* --- 7. Rodapé --- */
-footer {
-    background-color: var(--bg-dark); /* Rodapé escuro */
+/* --- Footer --- */
+.main-footer {
+    background-color: #222;
     color: var(--text-light);
-    padding: 50px 0 20px;
+    padding-top: 50px;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #3d4a57;
     text-align: left;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-info h4, .footer-links h4, .footer-social h4 {
-    color: var(--accent-color); /* Usando o novo accent-color */
+.footer-col .footer-logo {
+    height: 60px;
     margin-bottom: 15px;
-    font-weight: 600;
 }
 
-.footer-info p {
-    font-size: 0.95rem;
-    color: #aaa;
+.footer-col h4 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.4em;
 }
 
-.footer-links ul {
+.footer-col p, .footer-col ul li a {
+    color: #bbb;
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.footer-col ul {
     list-style: none;
 }
 
-.footer-links a {
-    color: #ccc;
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
     text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: var(--primary-color); /* Usando o novo primary-color */
+.footer-col ul li a:hover {
+    color: var(--accent-color);
 }
 
-.footer-social a {
+.social-icons a {
     color: var(--text-light);
-    font-size: 1.8rem;
-    margin-right: 20px;
-    transition: color 0.3s;
+    font-size: 1.8em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
 }
 
-.footer-social a:hover {
-    color: var(--secondary-color); /* Mantido verde para CTA */
+.social-icons a:hover {
+    color: var(--accent-color);
 }
 
-.email-footer {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    color: #ccc;
-}
-
-.copy {
+.footer-bottom {
+    background-color: #1a1a1a;
+    padding: 20px 0;
     text-align: center;
-    margin-top: 25px;
-    font-size: 0.85rem;
-    color: #777;
+    font-size: 0.9em;
+    color: #999;
 }
 
-/* --- Botão Flutuante do WhatsApp --- */
+/* --- WhatsApp Float Button --- */
 .whatsapp-float {
-    position: fixed; /* Fixa o botão na tela */
+    position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 30px; /* Distância do fundo da tela */
-    right: 30px; /* Distância da direita da tela */
-    background-color: #25D366; /* Cor verde oficial do WhatsApp */
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
     color: #FFF;
-    border-radius: 50px; /* Deixa o botão redondo */
+    border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
-    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Adicionando text-decoration: none aqui para remover o sublinhado padrão */
-    text-decoration: none; 
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
 .whatsapp-float:hover {
-    background-color: #128C7E; /* Tom mais escuro no hover */
-    transform: scale(1.05); /* Pequeno efeito de zoom no hover */
+    transform: scale(1.1);
 }
 
-/* REMOÇÃO DA LINHA ABAIXO DO ÍCONE DO WHATSAPP */
-/* Regras para garantir que o botão flutuante do WhatsApp não tenha o sublinhado customizado */
-.whatsapp-float::after {
-    content: none !important; /* Remove o pseudo-elemento do sublinhado */
-    width: 0 !important; /* Garante que a largura seja zero, caso o content:none não seja suficiente */
-}
-
-.whatsapp-float:hover::after {
-    width: 0 !important; /* Também remove no hover */
-}
-/* FIM DA REMOÇÃO DA LINHA */
-
-
-/* --- Responsividade (Media Query) --- */
+/* --- Responsividade (Mobile First) --- */
 @media (max-width: 992px) {
-    .sobre-content {
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse; /* Imagem acima do texto no mobile */
+        text-align: center;
+    }
+    
+    .hero-text, .hero-image {
+        flex: none; /* Remove flex-grow */
+        width: 100%;
+    }
+
+    .hero-image {
+        margin-bottom: 30px;
+    }
+
+    .hero-text h1, .about-text h2 {
+        text-align: center;
+    }
+
+    .about-content {
         flex-direction: column;
     }
 
-    .sobre-img, .sobre-text {
-        max-width: 100%;
+    .about-image {
+        margin-bottom: 30px;
     }
 
-    .sobre-img {
-        margin-bottom: 30px;
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col img, .footer-col h4, .footer-col p, .footer-col ul, .footer-col .social-icons {
+        margin: 0 auto 15px auto;
+    }
+    .footer-col ul {
+        padding-left: 0; /* Remove padding padrão de lista */
+    }
+    .social-icons {
+        justify-content: center; /* Centraliza ícones sociais */
+        display: flex;
     }
 }
 
 @media (max-width: 768px) {
-    /* Menu Mobile */
+    .main-header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-link {
+        margin-bottom: 10px;
+    }
+
     .nav-menu {
-        position: relative;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-list {
-        display: none;
+        display: none; /* Escondido por padrão no mobile */
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
         width: 100%;
-        background-color: var(--primary-color); /* Fundo do menu mobile para a cor escura do header */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        padding: 10px 0;
-        text-align: center;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 70px; /* Abaixo do header */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        animation: slideDown 0.3s ease-out forwards;
     }
 
     .nav-list.active {
@@ -576,70 +593,66 @@ footer {
 
     .nav-list li {
         margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .nav-list a {
-        padding: 10px 20px;
+    .nav-list li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-list .nav-link {
         display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borda para ser clara no fundo escuro */
+        padding: 15px 20px;
+        text-align: center;
+        width: 100%;
     }
 
-    .nav-list a.btn-contato {
-        margin-top: 10px;
-        border: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Outros ajustes de mobile */
-    .hero {
-        padding: 100px 20px 80px;
-    }
-
-    .hero h2 {
-        font-size: 2.5rem;
+    .nav-menu .btn-cta {
+        margin-top: 10px; /* Espaçamento para o botão no menu mobile */
+        width: calc(100% - 40px); /* Ajuste a largura do botão no menu */
+        margin-bottom: 15px;
     }
     
-    section h3 {
-        font-size: 1.8rem;
+    .menu-toggle {
+        display: block; /* Visível no mobile */
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
-    /* Ajuste do logo para mobile */
-    .logo-img {
-        width: 160px; /* ALTERADO: Logo em dispositivos móveis AINDA MAIOR */
+    section {
+        padding: 60px 0;
     }
 
-    /* Responsividade para o botão flutuante em telas menores */
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
     .whatsapp-float {
-        width: 50px; /* Um pouco menor em mobile */
+        width: 50px;
         height: 50px;
         bottom: 20px;
         right: 20px;
         font-size: 25px;
     }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-social {
-        padding-top: 15px;
-    }
 }
 
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 2rem;
+/* Animação para menu mobile */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-    
-    .servico-card {
-        text-align: center;
-    }
-
-    .icon-card {
-        margin: 20px auto 10px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

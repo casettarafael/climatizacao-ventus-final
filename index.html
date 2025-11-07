@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventus Climatização - Soluções Completas em Ar Condicionado e Manutenção</title>
-    <meta name="description" content="Especialistas em instalação, manutenção e projetos de ar condicionado para ambientes residenciais e comerciais. Peça seu orçamento!">
-
+    <title>Ventus Climatização | Conforto e Eficiência para seu Ambiente</title>
+    <meta name="description" content="Ventus: Especialistas em climatização. Soluções completas e eficientes em instalação, manutenção e projetos de ar condicionado para seu conforto ideal.">
+    
+    <link rel="icon" href="log.png" type="image/png">
+    
     <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
+
+    <header class="main-header">
+        <div class="container header-content">
             <a href="#home" class="logo-link">
                 <img src="log.png" alt="Ventus Climatização Logo" class="logo-img">
             </a>
             <nav class="nav-menu">
-                <button class="menu-toggle" aria-label="Abrir Menu"><i class="fas fa-bars"></i></button>
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <ul class="nav-list">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#diferenciais">Vantagens</a></li>
-                    <li><a href="#sobre">Empresa</a></li>
-                    <li><a href="#contato" class="btn-contato">Orçamento</a></li>
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
+                    <li><a href="#contato" class="nav-link btn-cta">Orçamento Rápido</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>O Conforto Climático Perfeito é o Nosso Trabalho.</h2>
+    <section id="home" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>O Conforto Climático Perfeito é o Nosso Trabalho.</h1>
                 <p>
                     A Ventus Climatização oferece soluções de ponta em sistemas de ar condicionado e ventilação, atendendo às
                     necessidades de residências, comércios e indústrias. Nossa expertise abrange desde a consultoria inicial
@@ -40,90 +46,99 @@
                 </p>
                 <a href="#contato" class="btn-primary">Solicite um Orçamento Gratuito</a>
             </div>
-        </div>
-    </section>
-
-    <section id="servicos" class="servicos">
-        <div class="container">
-            <h3>Nossos Serviços Essenciais</h3>
-            <div class="servicos-grid">
-                <article class="servico-card">
-                    <img src="./instalação.webp" alt="Serviço de Instalação de Ar Condicionado" class="servico-img">
-                    <i class="fas fa-wrench icon-card"></i>
-                    <h4>Instalação Profissional</h4>
-                    <p>Dimensionamento e instalação eficiente de sistemas Split, Janela, Cassete, VRF e outros, com garantia de fábrica e serviço.</p>
-                </article>
-                <article class="servico-card">
-                    <img src="./manutençao12.jpeg" alt="Serviço de Manutenção de Ar Condicionado" class="servico-img">
-                    <i class="fas fa-tools icon-card"></i>
-                    <h4>Manutenção Preventiva</h4>
-                    <p>Planos de manutenção PMOC (Plano de Manutenção, Operação e Controle) para empresas e revisões completas para residências.</p>
-                </article>
-                <article class="servico-card">
-                    <img src="./limpesa.jpg" alt="Serviço de Limpeza e Higienização de Ar Condicionado" class="servico-img">
-                    <i class="fas fa-snowflake icon-card"></i>
-                    <h4>Higienização e Limpeza</h4>
-                    <p>Limpeza técnica profunda para eliminação de fungos e bactérias, melhorando a qualidade do ar e a eficiência energética.</p>
-                </article>
+            <div class="hero-image">
+                <img src="manutençao12.jpeg" alt="Técnico instalando ar condicionado" class="responsive-img">
             </div>
         </div>
     </section>
 
-    <section id="diferenciais" class="diferenciais">
+    <section id="servicos" class="services-section">
         <div class="container">
-            <h3>O Diferencial Ventus: Por Que Somos a Melhor Escolha?</h3>
-            <div class="diferenciais-grid">
-                <div class="diferencial-item">
+            <h2>Nossos Serviços Essenciais</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="instalação.webp" alt="Serviço de Instalação de Ar Condicionado" class="card-img">
+                    <div class="card-content">
+                        <i class="fas fa-wrench icon-service"></i>
+                        <h3>Instalação Profissional</h3>
+                        <p>Dimensionamento e instalação eficiente de sistemas Split, Janela, Cassete, VRF e outros, com garantia de fábrica e serviço.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="manutençao12.jpeg" alt="Serviço de Manutenção de Ar Condicionado" class="card-img">
+                    <div class="card-content">
+                        <i class="fas fa-tools icon-service"></i>
+                        <h3>Manutenção Preventiva</h3>
+                        <p>Planos de manutenção PMOC (Plano de Manutenção, Operação e Controle) para empresas e revisões completas para residências.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="limpesa.jpg" alt="Serviço de Limpeza e Higienização de Ar Condicionado" class="card-img">
+                    <div class="card-content">
+                        <i class="fas fa-snowflake icon-service"></i>
+                        <h3>Higienização e Limpeza</h3>
+                        <p>Limpeza técnica profunda para eliminação de fungos e bactérias, melhorando a qualidade do ar e a eficiência energética.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="features-section">
+        <div class="container">
+            <h2>Por Que Escolher a Ventus?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
                     <i class="fas fa-certificate"></i>
                     <h4>Técnicos Certificados</h4>
-                    <p>Nossa equipe é treinada e certificada pelos principais fabricantes do mercado de AC.</p>
+                    <p>Equipe altamente qualificada e treinada pelos principais fabricantes do mercado de AC.</p>
                 </div>
-                <div class="diferencial-item">
-                    <i class="fas fa-stopwatch-20"></i>
-                    <h4>Atendimento Rápido</h4>
-                    <p>Prontidão no agendamento e execução de serviços de emergência e manutenção.</p>
+                <div class="feature-item">
+                    <i class="fas fa-stopwatch"></i>
+                    <h4>Atendimento Ágil</h4>
+                    <p>Agilidade no agendamento e execução de serviços, com foco na sua satisfação.</p>
                 </div>
-                <div class="diferencial-item">
+                <div class="feature-item">
                     <i class="fas fa-handshake"></i>
-                    <h4>Garantia Estendida</h4>
-                    <p>Oferecemos garantia completa sobre todos os serviços de instalação e peças utilizadas.</p>
+                    <h4>Garantia de Qualidade</h4>
+                    <p>Garantia completa em todos os serviços e peças utilizadas para sua tranquilidade.</p>
                 </div>
-                <div class="diferencial-item">
+                <div class="feature-item">
                     <i class="fas fa-leaf"></i>
-                    <h4>Soluções Ecológicas</h4>
-                    <p>Foco em equipamentos com gás refrigerante R-410A e R-32, de baixo impacto ambiental.</p>
+                    <h4>Sustentabilidade</h4>
+                    <p>Priorizamos equipamentos com tecnologias ecológicas e baixo impacto ambiental.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="sobre">
-        <div class="container">
-            <h3>Nossa Jornada e Compromisso com a Qualidade</h3>
-            <div class="sobre-content">
-                <img src="./equipe.jpeg" alt="Foto da Equipe Ventus Climatização" class="sobre-img">
-                <div class="sobre-text">
-                    <p>
-                        A Ventus Climatização nasceu com a missão de elevar o padrão de conforto térmico e qualidade do ar para os nossos
-                        clientes. Com uma equipe técnica altamente qualificada e certificada, utilizamos apenas equipamentos e peças
-                        originais, seguindo rigorosamente as normas técnicas (ABNT) e de segurança.
-                    </p>
-                    <p>
-                        Nosso diferencial é o atendimento personalizado, onde cada projeto é tratado de forma única para oferecer a solução
-                        que realmente se encaixa no seu espaço e no seu bolso. Escolher a Ventus significa optar pela durabilidade,
-                        eficiência e, acima de tudo, paz de espírito sabendo que seu sistema de climatização está em mãos experientes.
-                    </p>
-                    <a href="#contato" class="btn-secondary">Fale Diretamente com um Consultor</a>
-                </div>
+    <section id="sobre" class="about-section">
+        <div class="container about-content">
+            <div class="about-image">
+                <img src="equipe.jpeg" alt="Equipe Ventus Climatização" class="responsive-img">
+            </div>
+            <div class="about-text">
+                <h2>Nossa Jornada e Compromisso com Você</h2>
+                <p>
+                    A Ventus Climatização nasceu com a missão de elevar o padrão de conforto térmico e qualidade do ar para os nossos
+                    clientes. Com uma equipe técnica altamente qualificada e certificada, utilizamos apenas equipamentos e peças
+                    originais, seguindo rigorosamente as normas técnicas (ABNT) e de segurança.
+                </p>
+                <p>
+                    Nosso diferencial é o atendimento personalizado, onde cada projeto é tratado de forma única para oferecer a solução
+                    que realmente se encaixa no seu espaço e no seu bolso. Escolher a Ventus significa optar pela durabilidade,
+                    eficiência e, acima de tudo, paz de espírito sabendo que seu sistema de climatização está em mãos experientes.
+                </p>
+                <a href="#contato" class="btn-secondary">Fale com um Consultor</a>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="contato">
+    <section id="contato" class="contact-section">
         <div class="container">
-            <h3>Solicite Seu Orçamento Agora</h3>
-            <p class="contato-subtext">Preencha o formulário abaixo e entraremos em contato o mais breve possível para oferecer a melhor solução em climatização.</p>
-
+            <h2>Solicite Seu Orçamento</h2>
+            <p class="contact-subtext">Preencha o formulário e entraremos em contato para oferecer a melhor solução em climatização.</p>
+            
             <form id="orcamentoForm" class="contact-form">
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
@@ -153,10 +168,9 @@
                 </div>
 
                 <button 
-                    type="button" 
+                    type="submit" 
                     id="enviarOrcamentoBtn" 
                     class="btn-primary"
-                    onclick="enviarOrcamentoWhatsApp()"
                 >
                     Enviar Pedido de Orçamento via WhatsApp
                 </button>
@@ -164,33 +178,36 @@
         </div>
     </section>
     
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <h4>Ventus Climatização</h4>
-                    <p>Especialistas em conforto climático. Soluções que geram bem-estar e economia.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navegação</h4>
-                    <ul>
-                        <li><a href="#servicos">Nossos Serviços</a></li>
-                        <li><a href="#sobre">Conheça a Empresa</a></li>
-                        <li><a href="#contato">Peça Seu Orçamento</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Fale Conosco</h4>
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <img src="log.png" alt="Ventus Climatização Logo" class="footer-logo">
+                <p>Especialistas em conforto climático. Soluções que geram bem-estar e economia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Orçamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> (11) 91659-8620</p>
+                <p><i class="fas fa-envelope"></i> ventusclimazacaosp@gmail.com</p>
+                <div class="social-icons">
                     <a href="https://api.whatsapp.com/send?phone=5511916598620" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    
                     <a href="https://instagram.com/ventusclimatizacaosp" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    
-                    <a href="tel:+5511916598620" aria-label="Telefone"><i class="fas fa-phone"></i></a>
-                    
-                    <p class="email-footer">E-mail: ventusclimazacaosp@gmail.com</p>
                 </div>
             </div>
-            <p class="copy">&copy; 2025 Ventus Climatização. Todos os direitos reservados. | Desenvolvido com HTML e CSS.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Ventus Climatização. Todos os direitos reservados. | Desenvolvido com carinho.</p>
+            </div>
         </div>
     </footer>
 
@@ -198,60 +215,6 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>a
-        const whatsappNumber = '5511916598620';
-
-        function enviarOrcamentoWhatsApp() {
-            
-            // 1. Coletar dados dos campos
-            const nome = document.getElementById('nome');
-            const telefone = document.getElementById('telefone');
-            const servicoElement = document.getElementById('servico');
-            const mensagem = document.getElementById('mensagem');
-            
-            // 2. Validação de segurança para garantir que os elementos existem
-            if (!nome || !telefone || !servicoElement) {
-                alert("Erro interno: A estrutura do formulário está incompleta. Verifique os IDs.");
-                console.error("Erro interno: Estrutura do formulário incompleta.");
-                return; 
-            }
-            
-            const nomeValor = nome.value.trim();
-            const telefoneValor = telefone.value.trim();
-            const servico = servicoElement.options[servicoElement.selectedIndex].text; 
-            const mensagemValor = mensagem.value.trim();
-
-            // 3. Validação de preenchimento (Alerta se vazio)
-            if (nomeValor === "" || telefoneValor === "" || servico === "Selecione...") {
-                alert("🚨 Por favor, preencha seu Nome, Telefone e Tipo de Serviço para enviar o orçamento.");
-                return; 
-            }
-
-            // 4. Montar a mensagem personalizada
-            let textoMensagem = `*🚀 NOVO ORÇAMENTO VIA SITE - Ventus Climatização*
-            
-*👤 Cliente:* ${nomeValor}
-*📱 Contato (Cliente):* ${telefoneValor}
-*🛠️ Serviço Solicitado:* ${servico}
-`;
-
-            if (mensagemValor) {
-                textoMensagem += `
-*📝 Detalhes:* ${mensagemValor}`;
-            } else {
-                 textoMensagem += `
-*📝 Detalhes:* Nenhuma observação adicional foi fornecida.`;
-            }
-
-            // 5. Codificar a mensagem para o URL
-            const urlEncodedMessage = encodeURIComponent(textoMensagem);
-
-            // 6. Criar o link final e abrir
-            const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${urlEncodedMessage}`;
-
-            // Esta linha deve abrir o WhatsApp!
-            window.open(whatsappLink, '_blank');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
