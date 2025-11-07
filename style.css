@@ -1,8 +1,8 @@
 /* Variáveis CSS para fácil customização */
 :root {
-    --primary-color: #0d47a1; /* Azul Marinho Escuro */
+    --primary-color: #154da0; /* Azul Marinho Escuro */
     --secondary-color: #1976d2; /* Azul Médio */
-    --accent-color: #4CAF50; /* Verde para destaque/CTA */
+    --accent-color: #50bf53; /* Verde para destaque/CTA */
     --text-dark: #333;
     --text-light: #f4f4f4;
     --bg-light: #ffffff;
