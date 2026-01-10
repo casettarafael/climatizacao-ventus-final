@@ -3,21 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventus Climatização | Conforto e Eficiência para seu Ambiente</title>
-    <meta name="description" content="Ventus: Especialistas em climatização. Soluções completas e eficientes em instalação, manutenção e projetos de ar condicionado para seu conforto ideal.">
+    <title>Ventus Climatização | Instalação e Manutenção de Ar Condicionado em São Paulo - SP</title>
+    <meta name="description" content="Especialistas em Ar Condicionado em São Paulo. Instalação, manutenção, limpeza e PMOC para residências e empresas na capital paulista. Orçamento rápido via WhatsApp!">
+    <meta name="keywords" content="ar condicionado são paulo, instalação ar condicionado sp, manutenção ar condicionado sp, limpeza ar condicionado, PMOC são paulo, climatização sp">
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="São Paulo">
     
     <link rel="icon" href="log.png" type="image/png">
     
+    <!-- Google Fonts Modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Schema.org para Negócios Locais (SEO Vital) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ventus Climatização",
+      "image": "log.png",
+      "telephone": "5511916598620",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
 </head>
 <body>
 
     <header class="main-header">
         <div class="container header-content">
             <a href="#home" class="logo-link">
-                <img src="log.png" alt="Ventus Climatização Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">VENTUS</span>
+                    <span class="logo-subtitle">CLIMATIZAÇÃO</span>
+                </div>
             </a>
             <nav class="nav-menu">
                 <button class="menu-toggle" aria-label="Abrir Menu">
@@ -28,161 +70,215 @@
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
                     <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-                    <li><a href="#contato" class="nav-link btn-cta">Orçamento Rápido</a></li>
+                    <li><a href="#contato" class="nav-link btn-cta"><i class="fab fa-whatsapp"></i> Orçamento SP</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>O Conforto Climático Perfeito é o Nosso Trabalho.</h1>
+                <span class="badge-sp">Atendemos toda São Paulo e Grande SP</span>
+                <h1>Especialistas em Ar Condicionado e Climatização</h1>
                 <p>
-                    A Ventus Climatização oferece soluções de ponta em sistemas de ar condicionado e ventilação, atendendo às
-                    necessidades de residências, comércios e indústrias. Nossa expertise abrange desde a consultoria inicial
-                    e projetos personalizados, até a instalação, manutenção preventiva e os reparos mais complexos.
-                    Garantimos ambientes saudáveis, climatizados com a máxima eficiência energética e o mínimo de ruído.
+                    Instalação, manutenção e limpeza técnica com padrão de excelência. 
+                    Garanta o conforto térmico da sua residência ou empresa com a Ventus.
                 </p>
-                <a href="#contato" class="btn-primary">Solicite um Orçamento Gratuito</a>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn-primary pulse-animation">Solicitar Orçamento Gratuito</a>
+                    <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+                </div>
+                <div class="trust-badges">
+                    <span><i class="fas fa-check-circle"></i> Técnicos Certificados</span>
+                    <span><i class="fas fa-check-circle"></i> Atendimento Rápido em SP</span>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="manutençao12.jpeg" alt="Técnico instalando ar condicionado" class="responsive-img">
+                <!-- Adicionado container para efeito visual -->
+                <div class="img-wrapper">
+                    <img src="manutençao12.jpeg" alt="Técnico instalando ar condicionado em São Paulo" class="responsive-img">
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="services-section">
+    <section id="servicos" class="services-section reveal-on-scroll">
         <div class="container">
-            <h2>Nossos Serviços Essenciais</h2>
+            <div class="section-header">
+                <h2>Soluções Completas em Climatização</h2>
+                <p>Do projeto à manutenção, cuidamos do seu ar condicionado em qualquer região de São Paulo.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="instalação.webp" alt="Serviço de Instalação de Ar Condicionado" class="card-img">
+                    <div class="card-image-container">
+                        <img src="instalação.webp" alt="Instalação de Ar Condicionado Split em SP" class="card-img">
+                    </div>
                     <div class="card-content">
                         <i class="fas fa-wrench icon-service"></i>
                         <h3>Instalação Profissional</h3>
-                        <p>Dimensionamento e instalação eficiente de sistemas Split, Janela, Cassete, VRF e outros, com garantia de fábrica e serviço.</p>
+                        <p>Instalação técnica de Split, Multi-Split, Cassete e VRF seguindo normas dos fabricantes. Garantia total do serviço.</p>
+                        <a href="#contato" class="link-more">Cotar Instalação &rarr;</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="manutençao12.jpeg" alt="Serviço de Manutenção de Ar Condicionado" class="card-img">
+                    <div class="card-image-container">
+                        <img src="manutençao12.jpeg" alt="Manutenção de Ar Condicionado Preventiva" class="card-img">
+                    </div>
                     <div class="card-content">
                         <i class="fas fa-tools icon-service"></i>
-                        <h3>Manutenção Preventiva</h3>
-                        <p>Planos de manutenção PMOC (Plano de Manutenção, Operação e Controle) para empresas e revisões completas para residências.</p>
+                        <h3>Manutenção e PMOC</h3>
+                        <p>Contratos de manutenção preventiva e PMOC para empresas em SP, garantindo a lei e a qualidade do ar.</p>
+                        <a href="#contato" class="link-more">Saber sobre PMOC &rarr;</a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img src="limpesa.jpg" alt="Serviço de Limpeza e Higienização de Ar Condicionado" class="card-img">
+                    <div class="card-image-container">
+                        <img src="limpesa.jpg" alt="Limpeza e Higienização de Ar Condicionado" class="card-img">
+                    </div>
                     <div class="card-content">
                         <i class="fas fa-snowflake icon-service"></i>
                         <h3>Higienização e Limpeza</h3>
-                        <p>Limpeza técnica profunda para eliminação de fungos e bactérias, melhorando a qualidade do ar e a eficiência energética.</p>
+                        <p>Elimine fungos, bactérias e odores. Higienização completa que reduz o consumo de energia e protege sua saúde.</p>
+                        <a href="#contato" class="link-more">Agendar Limpeza &rarr;</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="diferenciais" class="features-section">
+    <section id="diferenciais" class="features-section reveal-on-scroll">
         <div class="container">
-            <h2>Por Que Escolher a Ventus?</h2>
+            <h2>Por que a Ventus é referência em SP?</h2>
             <div class="features-grid">
                 <div class="feature-item">
                     <i class="fas fa-certificate"></i>
                     <h4>Técnicos Certificados</h4>
-                    <p>Equipe altamente qualificada e treinada pelos principais fabricantes do mercado de AC.</p>
+                    <p>Profissionais treinados pelas principais marcas (LG, Samsung, Daikin, Fujitsu).</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-stopwatch"></i>
-                    <h4>Atendimento Ágil</h4>
-                    <p>Agilidade no agendamento e execução de serviços, com foco na sua satisfação.</p>
+                    <h4>Pontualidade</h4>
+                    <p>Respeitamos seu tempo. Agendamento preciso e execução limpa e organizada.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-handshake"></i>
-                    <h4>Garantia de Qualidade</h4>
-                    <p>Garantia completa em todos os serviços e peças utilizadas para sua tranquilidade.</p>
+                    <h4>Preço Justo</h4>
+                    <p>Orçamentos transparentes sem surpresas. O melhor custo-benefício da capital.</p>
                 </div>
                 <div class="feature-item">
                     <i class="fas fa-leaf"></i>
-                    <h4>Sustentabilidade</h4>
-                    <p>Priorizamos equipamentos com tecnologias ecológicas e baixo impacto ambiental.</p>
+                    <h4>Eficiência Energética</h4>
+                    <p>Focamos em soluções Inverter que economizam até 70% na sua conta de luz.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sobre" class="about-section">
+    <section id="sobre" class="about-section reveal-on-scroll">
         <div class="container about-content">
             <div class="about-image">
                 <img src="equipe.jpeg" alt="Equipe Ventus Climatização" class="responsive-img">
+                <div class="experience-badge">
+                    <span class="years">Excelência</span>
+                    <span class="text">em Climatização</span>
+                </div>
             </div>
             <div class="about-text">
-                <h2>Nossa Jornada e Compromisso com Você</h2>
+                <h2>Compromisso com o seu Conforto</h2>
                 <p>
-                    A Ventus Climatização nasceu com a missão de elevar o padrão de conforto térmico e qualidade do ar para os nossos
-                    clientes. Com uma equipe técnica altamente qualificada e certificada, utilizamos apenas equipamentos e peças
-                    originais, seguindo rigorosamente as normas técnicas (ABNT) e de segurança.
+                    A <strong>Ventus Climatização</strong> atua em São Paulo com a missão de levar conforto térmico e ar puro para residências e empresas. 
+                    Entendemos que cada bairro de SP tem suas particularidades, e nossa equipe está pronta para atender com agilidade na Zona Sul, Norte, Leste, Oeste e Centro.
                 </p>
                 <p>
-                    Nosso diferencial é o atendimento personalizado, onde cada projeto é tratado de forma única para oferecer a solução
-                    que realmente se encaixa no seu espaço e no seu bolso. Escolher a Ventus significa optar pela durabilidade,
-                    eficiência e, acima de tudo, paz de espírito sabendo que seu sistema de climatização está em mãos experientes.
+                    Seguimos rigorosamente as normas técnicas da ABNT e dos fabricantes. Seja para instalar um ar condicionado novo no seu apartamento ou realizar o PMOC da sua empresa, somos a escolha certa.
                 </p>
-                <a href="#contato" class="btn-secondary">Fale com um Consultor</a>
+                <ul class="about-list">
+                    <li><i class="fas fa-check"></i> Atendimento em toda Grande São Paulo</li>
+                    <li><i class="fas fa-check"></i> Projetos personalizados</li>
+                    <li><i class="fas fa-check"></i> Pagamento facilitado</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="contato" class="contact-section">
+    <section id="contato" class="contact-section reveal-on-scroll">
         <div class="container">
-            <h2>Solicite Seu Orçamento</h2>
-            <p class="contact-subtext">Preencha o formulário e entraremos em contato para oferecer a melhor solução em climatização.</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Vamos conversar?</h2>
+                    <p>Solicite seu orçamento gratuito agora mesmo. Nossa equipe técnica está pronta para analisar sua necessidade.</p>
+                    
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>(11) 91659-8620</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>E-mail</strong>
+                            <p>ventusclimazacaosp@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Atendimento</strong>
+                            <p>São Paulo - SP e Região Metropolitana</p>
+                        </div>
+                    </div>
+                </div>
             
-            <form id="orcamentoForm" class="contact-form">
-                <div class="form-group">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefone">Telefone (WhatsApp)</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
-                <div class="form-group">
-                    <label for="servico">Tipo de Serviço</label>
-                    <select id="servico" name="servico" required>
-                        <option value="">Selecione...</option>
-                        <option value="Instalacao de AC">Instalação de AC</option>
-                        <option value="Manutencao / PMOC">Manutenção / PMOC</option>
-                        <option value="Limpeza / Higienizacao">Limpeza / Higienização</option>
-                        <option value="Outro Orcamento / Consultoria">Outro Orçamento / Consultoria</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Detalhes do Seu Pedido (Opcional)</label>
-                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
-                </div>
+                <form id="orcamentoForm" class="contact-form">
+                    <h3>Orçamento Rápido</h3>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone (WhatsApp)</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">O que você precisa?</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecione o serviço...</option>
+                            <option value="Instalacao de AC">Instalação de Ar Condicionado</option>
+                            <option value="Manutencao / PMOC">Manutenção / PMOC</option>
+                            <option value="Limpeza / Higienizacao">Limpeza / Higienização</option>
+                            <option value="Infraestrutura">Infraestrutura (Obra)</option>
+                            <option value="Outro Orcamento / Consultoria">Outros / Consultoria</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Detalhes (Bairro, tipo de aparelho, etc)</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Ex: Preciso instalar um Split no bairro Moema..."></textarea>
+                    </div>
 
-                <button 
-                    type="submit" 
-                    id="enviarOrcamentoBtn" 
-                    class="btn-primary"
-                >
-                    Enviar Pedido de Orçamento via WhatsApp
-                </button>
-            </form>
+                    <button type="submit" id="enviarOrcamentoBtn" class="btn-primary btn-full">
+                        <i class="fab fa-whatsapp"></i> Enviar via WhatsApp
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
     
     <footer class="main-footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <img src="log.png" alt="Ventus Climatização Logo" class="footer-logo">
-                <p>Especialistas em conforto climático. Soluções que geram bem-estar e economia.</p>
+                <div class="logo-text footer-logo-text">
+                    <span class="logo-title">VENTUS</span>
+                    <span class="logo-subtitle">CLIMATIZAÇÃO</span>
+                </div>
+                <p>Especialistas em ar condicionado em São Paulo. Soluções que geram bem-estar e economia para sua família e empresa.</p>
             </div>
             <div class="footer-col">
                 <h4>Navegação</h4>
@@ -198,6 +294,7 @@
                 <h4>Contato</h4>
                 <p><i class="fas fa-phone"></i> (11) 91659-8620</p>
                 <p><i class="fas fa-envelope"></i> ventusclimazacaosp@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> São Paulo - SP</p>
                 <div class="social-icons">
                     <a href="https://api.whatsapp.com/send?phone=5511916598620" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="https://instagram.com/ventusclimatizacaosp" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -206,7 +303,7 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2025 Ventus Climatização. Todos os direitos reservados. | Desenvolvido com carinho.</p>
+                <p>&copy; 2025 Ventus Climatização. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>

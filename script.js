@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const orcamentoForm = document.getElementById('orcamentoForm');
     const whatsappNumber = '5511916598620'; // Seu número de WhatsApp
 
+    // Efeito de sombra no header ao rolar
+    const header = document.querySelector('.main-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
     // Toggle do menu mobile
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', () => {
@@ -60,4 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(whatsappLink, '_blank');
         });
     }
+
+    // Animação de Scroll (Reveal)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(section => {
+        observer.observe(section);
+    });
 });
