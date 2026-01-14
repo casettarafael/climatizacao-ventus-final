@@ -21,7 +21,7 @@ O projeto é estático e leve, priorizando a velocidade e a compatibilidade.
 
 | Categoria | Tecnologia | Uso no Projeto |
 | :--- | :--- | :--- |
-| **Estrutura** | HTML5, CSS3, JavaScript (Puro) | Base do website estático, leve e performática. |
+| **Estrutura** | HTML5 Semântico, CSS3 (Flex/Grid/Vars), JS Moderno | Base do website estático, leve e performática. |
 | **Estilos/Ícones** | Font Awesome 6 | Ícones para diferenciar serviços e criar o *Call to Action* flutuante do WhatsApp. |
 | **Funcionalidade JS** | Script de Geração de Link WhatsApp | Implementação da lógica para ler o formulário e criar o URL de mensagem pré-definida. |
 
@@ -29,10 +29,10 @@ O projeto é estático e leve, priorizando a velocidade e a compatibilidade.
 
 Embora o arquivo `script.js` não tenha sido fornecido, é inferível que ele contenha a funcionalidade principal do site:
 
-1.  **Formulário para WhatsApp:** O script escuta o evento de *submit* do formulário `#orcamentoForm`.
+1.  **Formulário Inteligente:** O script escuta o evento de *submit*, aplica máscara de telefone automática e valida os campos.
 2.  **Geração de Mensagem:** Coleta os dados (Nome, Telefone, Tipo de Serviço, Mensagem) e os formata em uma mensagem completa.
 3.  **Redirecionamento:** Codifica a URL e redireciona o usuário para o link `wa.me/` com a mensagem pré-preenchida para o número da Ventus.
-4.  **Menu Mobile:** (Provável) Lógica para abrir/fechar o menu de navegação em telas pequenas.
+4.  **UX Aprimorada:** Notificações do tipo "Toast" substituem alertas nativos, e animações de scroll reveal dão vida ao site.
 
 ## ⚙️ Configuração e Implantação
 

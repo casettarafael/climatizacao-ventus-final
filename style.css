@@ -679,6 +679,112 @@ p {
     transform: translateY(0);
 }
 
+/* --- Locations Section (SEO Local) --- */
+.locations-section {
+    background-color: var(--bg-off-white);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.locations-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.location-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.location-card {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.location-card h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.city-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.city-list li {
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.city-list li::before {
+    content: '\f3c5'; /* Ícone Map Marker */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.neighborhood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 25px;
+}
+
+.neighborhood-grid strong {
+    display: block;
+    color: var(--primary-light);
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.neighborhood-grid ul {
+    list-style: none;
+}
+
+.neighborhood-grid ul li {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 8px;
+}
+
+.map-container {
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
 /* -------------------------------------- */
 /* --- Ajustes Mobile (max-width: 992px) --- */
 /* -------------------------------------- */
@@ -801,5 +907,9 @@ p {
 
     .btn-secondary {
         margin-left: 0;
+    }
+
+    .map-container iframe {
+        height: 300px;
     }
 }

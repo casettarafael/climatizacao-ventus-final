@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const orcamentoForm = document.getElementById('orcamentoForm');
     const whatsappNumber = '5511916598620'; // Seu número de WhatsApp
 
+    // Máscara de Telefone
+    const phoneInput = document.getElementById('telefone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+    }
+
     // Efeito de sombra no header ao rolar
     const header = document.querySelector('.main-header');
     if (header) {
@@ -47,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const mensagem = document.getElementById('mensagem').value.trim();
 
             // Validação simples
-            if (nome === "" || telefone === "" || servico === "Selecione...") {
-                alert("🚨 Por favor, preencha seu Nome, Telefone e o Tipo de Serviço para enviar o orçamento.");
+            if (nome === "" || telefone === "" || servico === "Selecione..." || servico === "") {
+                showNotification("🚨 Por favor, preencha Nome, Telefone e Serviço.", "error");
                 return;
             }
 
@@ -70,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const whatsappLink = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${urlEncodedMessage}`;
 
             window.open(whatsappLink, '_blank');
+            showNotification("✅ Redirecionando para o WhatsApp...", "success");
         });
     }
 
@@ -89,4 +99,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal-on-scroll').forEach(section => {
         observer.observe(section);
     });
+
+    // Sistema de Notificação (Toast)
+    function showNotification(message, type = 'info') {
+        const existingToast = document.querySelector('.toast');
+        if (existingToast) existingToast.remove();
+
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        // Força reflow para animação
+        toast.offsetHeight;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    }
 });
